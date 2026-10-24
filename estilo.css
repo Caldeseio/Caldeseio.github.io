@@ -1,0 +1,99 @@
+/* Caldeseio's games: the night sky and gold lettering of Crater Kings. The font is hosted here (Michroma, SIL OFL). */
+@font-face {
+  font-family: "Michroma";
+  src: url("fonts/Michroma-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --sky-top: #000318;
+  --sky-bottom: #061566;
+  --panel: rgba(9, 12, 40, 0.82);
+  --line: rgba(160, 175, 255, 0.22);
+  --gold: #ffd21f;
+  --text: #e8ebff;
+  --muted: #aab2e0;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--sky-top); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 90px 80px, #cfd8ff, transparent),
+    radial-gradient(1.5px 1.5px at 150px 20px, #fff, transparent),
+    radial-gradient(1px 1px at 200px 120px, #fff, transparent),
+    radial-gradient(1px 1px at 60px 150px, #aab4ff, transparent),
+    radial-gradient(1.3px 1.3px at 250px 60px, #fff, transparent),
+    linear-gradient(var(--sky-top), var(--sky-bottom));
+  background-size: 280px 170px, 280px 170px, 280px 170px, 280px 170px, 280px 170px, 280px 170px, 100% 100%;
+}
+
+a { color: var(--gold); }
+
+.page { max-width: 980px; margin: 0 auto; padding: 0 16px 40px; }
+
+header.bar {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--line); margin-bottom: 24px;
+}
+header.bar .brand { font-family: "Michroma", sans-serif; color: var(--gold); text-decoration: none; letter-spacing: 1px; }
+header.bar nav { margin-left: auto; font-size: 14px; }
+header.bar nav a { color: var(--muted); text-decoration: none; margin-left: 12px; }
+header.bar nav a.on { color: var(--text); font-weight: 600; }
+
+h1, h2, h3 { font-family: "Michroma", sans-serif; font-weight: normal; letter-spacing: 1px; }
+h1 { color: var(--gold); }
+h2 { color: var(--gold); font-size: 20px; margin: 32px 0 12px; }
+h1.title { font-size: clamp(24px, 5vw, 36px); margin: 8px 0 4px; }
+.lead { color: var(--muted); margin: 0 0 24px; }
+
+.hero { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.hero img { display: block; width: 100%; height: auto; }
+
+.app { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 20px 0; }
+.app img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
+.app h1 { margin: 0; font-size: clamp(24px, 5vw, 32px); }
+.app p { margin: 2px 0 0; color: var(--muted); }
+.badge {
+  margin-left: auto;
+  background: #000; color: #fff; border: 1px solid #777; border-radius: 10px;
+  padding: 8px 14px; font-size: 14px; white-space: nowrap;
+}
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; }
+.panel > p:first-child { margin-top: 0; }
+.panel > p:last-child { margin-bottom: 0; }
+
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); display: block; }
+.shots figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+@media (max-width: 700px) { .shots { grid-template-columns: 1fr; } }
+.note { color: var(--muted); font-size: 14px; }
+
+ul.features { margin: 0; padding-left: 40px; }
+ul.features li { margin: 4px 0; }
+
+.games { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.game { display: flex; gap: 16px; align-items: center; text-decoration: none; color: var(--text); }
+.game img { width: 84px; height: 84px; border-radius: 20px; flex: none; }
+.game h3 { margin: 0 0 4px; color: var(--gold); font-size: 17px; }
+.game p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.legal h1 { font-size: clamp(20px, 4.5vw, 28px); margin: 8px 0 4px; }
+.legal h2 { font-size: 17px; }
+.legal section { margin-bottom: 48px; }
+.date { color: var(--muted); font-size: 14px; margin-top: 0; }
+
+footer {
+  margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 14px; text-align: center;
+}
+footer b { color: var(--gold); font-weight: 600; }
